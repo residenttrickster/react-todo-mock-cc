@@ -13,7 +13,7 @@
     {
       "id": 3,
       "title": "Listen to Eric talk about how much he loves Fortnite",
-      "completed": false
+      "completed": true
     },
     {
       "id": 4,
@@ -23,12 +23,12 @@
     {
       "id": 5,
       "title": "Lecture",
-      "completed": true
+      "completed": false
     },
     {
       "id": 6,
       "title": "Code",
-      "completed": true
+      "completed": false
     }
   ]
 }

@@ -25,7 +25,12 @@ export default class NewToDoForm extends Component {
         })
        })
        .then(res => res.json())
-       .then(newTodo => this.props.handleAddNewToDo(newTodo))
+       .then(newTodo => {
+        this.props.handleAddNewToDo(newTodo)
+        this.setState({
+            title: ""
+        })
+       })
    }
 
   render() {
