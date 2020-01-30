@@ -6,6 +6,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 Run `npm install`
 
+We will be working off a JSON server.
+
+Get the server running with `json-server --watch db.json`
+
 
 ## Background
 

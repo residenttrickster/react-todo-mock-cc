@@ -1,16 +1,43 @@
 import React, { Component } from 'react';
 
 export default class NewToDoForm extends Component {
+   state = {
+        title: ""
+   }
+
+   handleOnChange = e => {
+        this.setState({
+            [e.target.name]: e.target.value
+        })
+   }
+
+   handleOnSubmit = e => {
+       e.preventDefault();
+       fetch(`http://localhost:3000/todos`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        },
+        body: JSON.stringify({
+            title: this.state.title,
+            completed: false
+        })
+       })
+       .then(res => res.json())
+       .then(newTodo => this.props.handleAddNewToDo(newTodo))
+   }
+
   render() {
     return (
       <div>
-        <form class="ui form">
+        <form className="ui form" onSubmit={this.handleOnSubmit}>
             <h2>New ToDo</h2>
-            <div class="field">
+            <div className="field">
                 <label>Title</label>
-                <input type="text" name="title" placeholder="Title"/>
+                <input onChange={this.handleOnChange} type="text" name="title" value={this.state.title} placeholder="Title"/>
             </div>
-            <button class="ui button" type="submit">Submit</button>
+            <button className="ui button" type="submit">Submit</button>
         </form>
       </div>
     );
