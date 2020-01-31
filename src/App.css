@@ -6,4 +6,15 @@
   display: flex;
   justify-content: space-around;
   padding: 10px;
+  height: 75vh;
+  overflow: scroll
+}
+
+#react-image {
+  width: 75px;
+  height: 75px;
+}
+
+.todo-header {
+  height: 25vh;
 }
