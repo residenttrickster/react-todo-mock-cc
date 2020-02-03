@@ -33,7 +33,8 @@ import ToDoContainer from './components/ToDoContainer'
 class App extends React.Component{
 
   state = {
-    todos: []
+    todos: [],
+    sortTitle: false
   }
 
   handleCompleteChange = (updateObj) => {
@@ -77,13 +78,46 @@ class App extends React.Component{
     }))
   }
 
+  handleSortTitleChange = () => {
+    this.setState(prevState => {
+      return {
+        sortTitle: !prevState.sortTitle
+      }
+    })
+  }
+
+  sortArray = () => {
+    if(this.state.sortTitle){
+      const sortedArray = [...this.state.todos].sort((a,b) => {
+        if(a.title.length > b.title.length){
+          // debugger
+          return -1
+        }
+        else if (a.title.length < b.title.length){
+          return 1
+        }
+        else{
+          return 0
+        }
+      })
+      return sortedArray
+    }
+    else{
+      return this.state.todos
+    }
+  }
+
   render(){
     return (
       <div className="App">
         <Header/>
-        <button className="ui button green">Sort by Title Length</button>
-        <button className="ui button purple">Sort by Title Length</button>
-        <ToDoContainer todos={this.state.todos} handleCompleteChange={this.handleCompleteChange} handleAddNewToDo={this.handleAddNewToDo} handleRemoveTodo={this.handleRemoveTodo}/>
+        {
+          this.state.sortTitle ?
+          <button onClick={this.handleSortTitleChange} className="ui button green">Sort by Normal</button>
+          :
+          <button onClick={this.handleSortTitleChange} className="ui button purple">Sort by Title Length</button>
+        }
+        <ToDoContainer todos={this.sortArray()} handleCompleteChange={this.handleCompleteChange} handleAddNewToDo={this.handleAddNewToDo} handleRemoveTodo={this.handleRemoveTodo}/>
       </div>
     );
   }
