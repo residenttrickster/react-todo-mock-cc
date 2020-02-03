@@ -11,6 +11,8 @@ To get you going, we've got a backend with todos! To get these, you're going to 
 1. Run `json-server --watch db.json`
 2. Visit `http://localhost:3000/todos` to confirm the list of todos.
 
+If the command, `json-server` is not recognized, you might have to run `npm install -g json-server`
+
 Let's run the app with `npm run start` or `npm start`. You will be asked if to use localhost:3001, consent to that.
 
 ## Background
@@ -28,7 +30,17 @@ Ultimately, we want our App to look something like:
 
 * Fetch the data from http://localhost:3000/todos
 * Render the each todo in the appropriate component
-* Each todo card will have button to change the complete status which will conditionally render based on the location of component. (i.e if a todo is under the Complete, the button text should say Incomplete and vice-versa.)
+* Each todo card will have button to change the complete status which will conditionally render based on the location of component.  (Also, if a todo is under the Complete, the button text should say Incomplete and vice-versa.)
+* When the button is clicked, a request should be sent to the server to change the status of `completed` for the associated todo.
+Don't forget:
+```
+    method: "PATCH",
+    headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+    },
+    body: JSON.stringify({})
+```
 
 Here is a gif of what it's supposed to look (Ignore the skull. That's a theme of my browser):
 
