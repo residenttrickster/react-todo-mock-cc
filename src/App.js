@@ -81,6 +81,8 @@ class App extends React.Component{
     return (
       <div className="App">
         <Header/>
+        <button className="ui button green">Sort by Title Length</button>
+        <button className="ui button purple">Sort by Title Length</button>
         <ToDoContainer todos={this.state.todos} handleCompleteChange={this.handleCompleteChange} handleAddNewToDo={this.handleAddNewToDo} handleRemoveTodo={this.handleRemoveTodo}/>
       </div>
     );
