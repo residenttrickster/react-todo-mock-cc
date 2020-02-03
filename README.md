@@ -31,7 +31,7 @@ Ultimately, we want our App to look something like:
 * Fetch the data from http://localhost:3000/todos
 * Render the each todo in the appropriate component
 * Each todo card will have button to change the complete status which will conditionally render based on the location of component.  (Also, if a todo is under the Complete, the button text should say Incomplete and vice-versa.)
-* When the button is clicked, a request should be sent to the server to change the status of `completed` for the associated todo.
+* When the button is clicked, the todo should be rendered in the appropriate component. BONUS: a PATCH request should be sent to http://localhost:3000/todos/:id to change the status of `completed` for the associated todo.
 Don't forget:
 ```
     method: "PATCH",
@@ -46,7 +46,7 @@ Here is a gif of what it's supposed to look (Ignore the skull. That's a theme of
 
 ![Change Complete Gif](public/ChangingTasks.gif)
 
-* Add a new todo. Make a POST request to http://localhost:3000/todos. 
+* Add a new todo to the collection and have it rendered. BONUS: Make a POST request to http://localhost:3000/todos. 
 Don't forget: 
 ```
     method: "POST",
@@ -56,13 +56,11 @@ Don't forget:
     },
     body: JSON.stringify({})
 ```
-* When the todo is successfully created in the server, make sure it is also rendered in React.
-* Delete a todo. Make a DELETE request to http://localhost:3000/todos/:id
+* Delete a todo from the collection. BONUS: Make a DELETE request to http://localhost:3000/todos/:id
 Don't forget:
 ```
     method: "DELETE"
 ```
-* When the todo is successfully deleted, also remove from React.
 
 Here is a gif of what it's supposed to look:
 
@@ -74,7 +72,7 @@ Here is a gif of what it's supposed to look:
 
 ![Search Todos](public/SearchTodos.gif)
 
-### Bonus
+### Super Bonus
 
 * Notice the Complete and Incomplete Components are a bit redundant. Is there anyway to reuse just one component for both of them?
 
