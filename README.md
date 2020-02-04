@@ -70,7 +70,7 @@ Here is a gif of what it's supposed to look:
 
 Here is a gif of what it's supposed to look:
 
-![Search Todos](public/SearchTodos.gif)
+![Search Todos](https://media.giphy.com/media/MZ3w0XXTdoJzTQLwCe/giphy.gif)
 
 ### Super Bonus
 
