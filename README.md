@@ -44,7 +44,7 @@ Don't forget:
 
 Here is a gif of what it's supposed to look (Ignore the skull. That's a theme of my browser):
 
-![Change Complete Gif](public/ChangingTasks.gif)
+![Change Complete Gif](https://media.giphy.com/media/hWGBJ0atz0D0GZUEjc/giphy.gif)
 
 * Add a new todo to the collection and have it rendered. BONUS: Make a POST request to http://localhost:3000/todos. 
 Don't forget: 
@@ -64,7 +64,7 @@ Don't forget:
 
 Here is a gif of what it's supposed to look:
 
-![Add Delete Todo](public/AddDeleteTodo.gif)
+![Add Delete Todo](https://media.giphy.com/media/hWGBJ0atz0D0GZUEjc/giphy.gif)
 
 * Incorporate the SearchBarComponent within the Incomplete Component to filter out todos. As you type, the Incomplete todos are dynamically rendered. 
 
