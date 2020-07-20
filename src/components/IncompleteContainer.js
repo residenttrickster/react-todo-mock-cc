@@ -4,6 +4,18 @@ import React, { Component } from 'react';
 
 export default class IncompleteContainer extends Component {
 
+  renderIncomplete = () => {
+    const incompletedTasks = this.props.todos.filter(todos => todos.completed === false)
+    return incompletedTasks.map(todos =>
+      <ToDoCard 
+      key={todos.id} 
+      title={todos.title}
+      completed={todos.completed }
+      />
+    )
+    
+  }
+
     // When implementing the search bar, consider implementing state here to make it dynamic. 
     // i.e everytime you type in the input field, the ToDos are immediately filtered
     
@@ -26,8 +38,7 @@ export default class IncompleteContainer extends Component {
         <div>
             <h1>Incomplete Todos</h1>
             {/* <SearchBarComponent handleOnChange={this.handleOnChange}/> */}
-            {/* Render ToDo Card for each ToDo */} 
-            {/* Which Array method can you use? */}
+            {this.renderIncomplete()}
         </div>
     )
   }

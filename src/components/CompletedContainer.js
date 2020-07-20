@@ -1,14 +1,27 @@
 import React from 'react'
 import ToDoCard from './ToDoCard'
 
-const CompletedContainer = (props) => {
-    return (
-        <div>
-            <h1>Completed Todos</h1>
-            {/* Render ToDo Card for each ToDo */}
-             {/* Which Array method can you use? */}
-        </div>
-    )
+class CompletedContainer extends React.Component {
+
+    renderComplete = () => {
+        const completedTasks = this.props.todos.filter(todos => todos.completed === true)
+        return completedTasks.map(todos =>
+            <ToDoCard 
+            key={todos.id} 
+            title={todos.title}
+            completed={todos.completed }/>
+        )}
+        
+        render () {
+            return (
+    <div>
+                <h1>Completed Todos</h1>
+                {this.renderComplete()}
+            </div>
+            )
+        }
+            
 }
+
 
 export default CompletedContainer
