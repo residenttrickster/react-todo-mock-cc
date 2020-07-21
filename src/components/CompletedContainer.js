@@ -8,8 +8,12 @@ class CompletedContainer extends React.Component {
         return completedTasks.map(todos =>
             <ToDoCard 
             key={todos.id} 
+            id={todos.id}
             title={todos.title}
-            completed={todos.completed }/>
+            completed={todos.completed }
+            toggleComplete={this.props.toggleComplete}
+            removeTodo={this.props.removeTodo}
+            />
         )}
         
         render () {
